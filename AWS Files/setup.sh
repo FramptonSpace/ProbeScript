@@ -22,9 +22,27 @@ conda create -y -n ProbeMod python=3.10.14
 conda activate ProbeMod
 
 # Install additional packages as needed
-conda install -y numpy pandas scipy pymoo yaml 
+conda install -y numpy pandas scipy pymoo pyaml git tmux
 
-# Ensure the script is executable
-chmod +x setup.sh
+git clone https://github.com/FramptonSpace/ProbeScript.git "/home/ec2-user/AWS Files"
 
-git clone https://github.com/your-username/your-repo.git /home/ec2-user/your-repo
+tmux new -s mysession
+
+python "AWS Files/AWS Files/Moo_All_In_One.py"
+
+git init
+
+git remote add origin https://github.com/FramptonSpace/ProbeScript.git
+
+cd "AWS Files"
+
+cd "Moo_Outputs"
+
+git add .
+
+git commit -m "New Results"
+
+git push https://FramptonSpace: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@github.com/FramptonSpace/ProbeScript.git main
+
+instance_id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
+aws ec2 stop-instances --instance-ids $instance_id --region eu-west-2
