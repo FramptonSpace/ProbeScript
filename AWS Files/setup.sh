@@ -42,7 +42,5 @@ git add .
 
 git commit -m "New Results"
 
-git push https://FramptonSpace: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@github.com/FramptonSpace/ProbeScript.git main
-
 instance_id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 aws ec2 stop-instances --instance-ids $instance_id --region eu-west-2
