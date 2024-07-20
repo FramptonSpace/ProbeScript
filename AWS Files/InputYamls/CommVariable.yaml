@@ -1,0 +1,8 @@
+#Var
+Frequency: 1e9
+#const
+k_boltz: 1.38e-23
+#var
+BW: 10000
+#const
+Target_SNR: 3

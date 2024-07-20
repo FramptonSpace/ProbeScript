@@ -1,0 +1,30 @@
+Probename: 'Triple'
+
+#Probe dimenstions
+R: 0.1
+l: 3.7
+#volume = 0.116
+mass: 440
+
+#vol/mass = 0.000264
+
+#0.00844 is thesis vol with same ratio
+####Comm System Values
+
+P_tx: 400e-3
+
+eff_tx: 0.25
+
+G_tx: 3.16
+
+eff_rx: 0.25
+G_rx: 3.16
+
+T_sys: 600
+
+#Powe System Variables
+
+Power_to_head: 40000
+Melt_eff: 0.4
+#Qdot_Science = Power_Science*Melt_eff_Sci
+

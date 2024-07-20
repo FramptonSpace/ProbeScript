@@ -1,0 +1,32 @@
+{
+    "rho_w" : {
+        "value" : 999.84,
+        "unit" : "kg/m3",
+        "note" : "water density"
+    },
+    "g_europa" : {
+        "value" : 1.3,
+        "unit" : "ms-2",
+        "note" : "gravity of europa"
+    },
+    "L" : {
+        "value" : 333430,
+        "unit" : "J/kg",
+        "note" : "latent heat"
+    },
+    "c_pw" : {
+        "value" : 4219.4,
+        "unit" : "J/kgK",
+        "note" : "heat capacity of water"
+    },
+    "k_w" : {
+        "value" : 0.00000115 ,
+        "unit" : "W/mK",
+        "note" : "thermal diffusivity of water from models"
+    },
+    "Temp_melt" : {
+        "value" : 273,
+        "unit" : "K",
+        "note" : "From Schuller 19 paper, constant?"
+    }
+}

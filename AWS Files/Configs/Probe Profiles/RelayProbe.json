@@ -1,0 +1,17 @@
+{
+    "Probe Length" : {
+        "value" : 1,
+        "unit" : "m"
+    },
+    "Probe Radius" : {
+        "value" : 0.5,
+        "unit" : "m"
+    },
+    "Probe Mass" : {
+        "value" : 20,
+        "unit" : "kg"
+    },
+    "Probe Heat Source" : {
+        "value" : "Am"
+    }
+}

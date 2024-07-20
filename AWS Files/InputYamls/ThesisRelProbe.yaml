@@ -1,0 +1,26 @@
+Probename: 'ThesisRelProbe'
+
+#Probe dimenstions
+R: 0.75
+l: 1
+mass: 10.5
+
+####Comm System Values
+
+P_tx: 400e-3
+
+eff_tx: 0.25
+
+G_tx: 3.16
+
+eff_rx: 0.25
+G_rx: 3.16
+
+T_sys: 600
+
+#Powe System Variables
+
+Power_to_head: 101
+Melt_eff: 0.9
+#Qdot_Science = Power_Science*Melt_eff_Sci
+

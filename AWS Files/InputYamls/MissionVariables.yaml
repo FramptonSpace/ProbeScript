@@ -1,0 +1,18 @@
+Mission_Time_Limit_d: 30
+#Mission_Time_Limit_s =  Mission_Time_Limit_d*86400
+timestep_s: 600
+
+###nth slice is sampled
+#const
+n_value: 350
+
+#const
+filename: '40km_Drho5_2D'
+
+#Number of vertical profiles, 776 by default
+slices: 776
+
+###Total number of probes
+n_probes: 2
+
+k_boltz: 1.38e-23

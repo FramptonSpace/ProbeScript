@@ -1,0 +1,37 @@
+{
+    "Probe Length" : {
+        "value" : 3.7,
+        "unit" : "m"
+    },
+    "Probe Radius" : {
+        "value" : 0.1,
+        "unit" : "m"
+    },
+    "Probe Mass" : {
+        "value" : 440,
+        "unit" : "kg"
+    },
+    "Probe Heat Source" : {
+        "value" : "Am"
+    },
+
+    "Qdot" : {
+        "value" : 20000
+    },
+    "Communication Frequency" : {
+        "value" : 1e9,
+        "unit" : "Hz"       
+    },
+    "TxOutPower" : {
+        "value" : 50,
+        "unit" : "dBm"
+    },
+    "TxGain" : {
+        "value" : 1,
+        "unit" : "dBi"
+    },
+    "TxLosses" : {
+        "value" : 1,
+        "unit" : "dB"
+    } 
+}

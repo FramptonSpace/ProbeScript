@@ -1,0 +1,22 @@
+ {   
+    "Probe Length" : {
+        "value" : 1,
+        "unit" : "m"
+    },
+    "RxGain" : {
+        "value" : 1,
+        "unit" : "dBi"
+        },
+    "RxLosses" : {
+        "value" : 1,
+        "unit" : "dB"
+        },
+    "Bandwidth" : {
+        "value" : 10,
+        "unit" : "Hz"
+        },
+    "MiscLosses" : {
+        "value" : 1,
+        "unit" : "dB"
+    }
+}
