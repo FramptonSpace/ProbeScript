@@ -1,0 +1,25 @@
+40km_Drho46_2D
+Variable Labels:
+['science_probe_diameter', 'science_probe_length', 'science_probe_mass', 'science_probe_RTG_ratio', 'science_probe_Comm_ratio', 'relay_probe_RTG_ratio', 'relay_probe_Comm_ratio', 'relay_probe_diameter', 'relay_probe_length', 'relay_probe_mass', 'sci_antenna_gain', 'rel_antenna_gain', 'target_snr', 'comm_frequency', 'comm_bandwidth', 'sci_sys_temp', 'rel_sys_temp', 'sci_comm_eff', 'rel_comm_eff', 'sci_power_to_head', 'rel_power_to_head']
+Variable Lower Lims:
+[0.01, 0.1, 40, 0.1, 0.1, 0.1, 0.1, 0.05, 0.2, 10, 3.15, 3.15, 2.9, 75000000.0, 8000, 550, 550, 0.5, 0.5, 0.5, 0.5]
+Variable Upper Lims:
+[0.5, 3.2, 100, 0.7, 0.7, 0.7, 0.7, 0.5, 3.2, 60, 3.16, 3.16, 3.1, 1000000000.0, 12000, 650, 650, 0.6, 0.6, 0.9, 0.9]
+n_gen,n_pop
+11
+#####RESULTS#####
+Results X (Design Space Values)
+[[2.23637502e-01 1.80371319e-01 7.29797487e+01 3.61193436e-01
+  3.52220681e-01 2.98200893e-01 2.22789180e-01 3.28671935e-01
+  1.09896402e+00 2.33413638e+01 3.15621134e+00 3.15529142e+00
+  2.92691599e+00 5.50059762e+08 8.73775946e+03 6.28533515e+02
+  6.35397529e+02 5.49423684e-01 5.84656149e-01 5.31858191e-01
+  7.02098436e-01]]
+Results F (Objective Space Values)
+[[-1.56012365e+00 -6.20750375e+07]]
+Results G (Constraint Values)
+[[ -3.67888757  -0.08658588  -0.27900993 -49.63838492]]
+Results cv (Aggregated Constraint Violation)
+[[0.]]
+Results History
+[[-1.56012365e+00 -6.20750375e+07]]

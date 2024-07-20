@@ -115,7 +115,7 @@ def Fileread(filename,depthlimit):
 def Fileread2D(filename):
     
     #Gives directory of file to be opened, then opens it
-    f = open('InputFiles/thermochemical_{}_data.txt'.format(filename),'r')
+    f = open('AWS Files/AWS Files/InputFiles/thermochemical_{}_data.txt'.format(filename),'r')
     #[x:y] tells python to read from the x line to the y line, blank means "to the beginning/end" so here we're reading from line 15 to the end of the document
     lines = f.readlines()[15:]
     #create a bunch of empty lists that we can populate with our data
@@ -536,7 +536,7 @@ def MaxCommsUpward():
     return(x)
 
 
-with open('Configs/EuropaPhysical.json') as EuropaConstantFile:
+with open('AWS Files/AWS Files/Configs/EuropaPhysical.json') as EuropaConstantFile:
     Europa_constants = json.load(EuropaConstantFile)
     rho_w = Europa_constants["rho_w"]["value"]
     g_europa = Europa_constants["g_europa"]["value"]
@@ -2020,7 +2020,7 @@ diameter_limit = 3.5
 
 Mission_time_limit_d = 30
 
-input_location = '/Users/sjf46/Library/CloudStorage/OneDrive-UniversityofLeicester/ProbeModelling/InputYamls/'
+input_location = '/home/ec2-user/AWS Files/AWS Files/InputYamls/'
 Mission_filename = 'MissionVariables.yaml'
 filename = '40km_Drho46_2D'
 ice_filename = filename
@@ -2033,7 +2033,7 @@ variable_labels = []
 variable_lower_lims = []
 variable_upper_lims = []
 
-with open('MOOSetupHeavy.yaml', 'r') as file:
+with open('AWS Files/AWS Files/MOOSetupHeavy.yaml', 'r') as file:
     # Load the contents of the file
     config = yaml.safe_load(file)
 
@@ -2296,7 +2296,7 @@ import scipy.interpolate
 
 #n_pop = 25
 #n_gen = 5
-n_pop = 2
+n_pop = 1
 n_gen = 1
 algorithm = NSGA2(pop_size=n_pop)# Choose an optimization algorithm from pymoo (e.g., NSGA-II, NSGA-III, etc.)
 problem = MyProblem(k_boltz,
@@ -2324,7 +2324,7 @@ for algorithm in result.history:
     all_pop = Population.merge(all_pop, algorithm.off)
     
 current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-filename = 'MOO_Outputs/{}_MOOStats_{}'.format(current_time,ice_filename)
+filename = '/home/ec2-user/AWS Files/AWS Files/Moo_Outputs/{}_MOOStats_{}'.format(current_time,ice_filename)
 
 
 with open(filename, 'w') as file:
