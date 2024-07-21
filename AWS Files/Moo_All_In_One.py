@@ -26,6 +26,9 @@ from pymoo.visualization.util import default_number_to_text
 from pymoo.core.problem import ElementwiseProblem
 from pymoo.core.population import Population
 
+from multiprocessing.pool import ThreadPool
+from pymoo.core.problem import StarmapParallelization
+
 import yaml
 import time
 import json
@@ -2160,6 +2163,9 @@ constraint_list+= Sys_constraint_list
 
 obj = DepthCalculation()
 
+n_threads = 4
+pool = ThreadPool(n_threads)
+runner = StarmapParallelization(pool.starmap)
 
 class MyProblem(ElementwiseProblem):
 
@@ -2169,7 +2175,8 @@ class MyProblem(ElementwiseProblem):
                         n_ieq_constr = len(constraint_list),
                         constr_ieq= constraint_list,
                         xl=np.array(variable_lower_lims),  # Lower bounds for x, y, and z
-                        xu=np.array(variable_upper_lims))
+                        xu=np.array(variable_upper_lims),
+                        elementwise_runner=runner)
     
         for key, value in kwargs.items():
             setattr(self, key, value)
