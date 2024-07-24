@@ -2000,10 +2000,17 @@ def Single_Run(ice_pointer,power_pointer,mass_pointer,dev_mass_pointer):
         file.write(str(result.CV)+ '\n')
         file.write('Results History' + '\n')
         file.write(str(all_pop.get("F"))+ '\n')
+        
+    return(filename)
 
 
-Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+a = Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+print('Run 1 Completed')
+b = Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+print('Run 2 Completed')
+c = Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+print('Run 3 Completed')
 
-
+print('All Runs Completed')
 
     
