@@ -119,7 +119,7 @@ def Fileread(filename,depthlimit):
 def Fileread2D(filename):
     
     #Gives directory of file to be opened, then opens it
-    f = open('InputFiles/thermochemical_{}_data.txt'.format(filename),'r')
+    f = open('/home/ec2-user/AWS Files/AWS Files/InputFiles/thermochemical_{}_data.txt'.format(filename),'r')
     #[x:y] tells python to read from the x line to the y line, blank means "to the beginning/end" so here we're reading from line 15 to the end of the document
     lines = f.readlines()[15:]
     #create a bunch of empty lists that we can populate with our data
@@ -540,7 +540,7 @@ def MaxCommsUpward():
     return(x)
 
 
-with open('Configs/EuropaPhysical.json') as EuropaConstantFile:
+with open('AWS Files/AWS Files/Configs/EuropaPhysical.json') as EuropaConstantFile:
     Europa_constants = json.load(EuropaConstantFile)
     rho_w = Europa_constants["rho_w"]["value"]
     g_europa = Europa_constants["g_europa"]["value"]
@@ -1668,7 +1668,7 @@ def Single_Run(ice_pointer,power_pointer,mass_pointer,dev_mass_pointer):
 
     Mission_time_limit_d = 30
 
-    input_location = '/Users/sjf46/Library/CloudStorage/OneDrive-UniversityofLeicester/ProbeModelling/InputYamls/'
+    input_location = '/home/ec2-user/AWS Files/AWS Files/InputYamls/'
     Mission_filename = 'MissionVariables.yaml'
     #filename = '40km_Drho5_2D'
     filename = ice_pointer
@@ -1683,7 +1683,8 @@ def Single_Run(ice_pointer,power_pointer,mass_pointer,dev_mass_pointer):
     variable_upper_lims = []
 
    #'MOOSetup.yaml' 
-    with open(mass_pointer, 'r') as file:
+    setup_file_path = '/home/ec2-user/AWS Files/AWS Files/{}'.format(mass_pointer)
+    with open(setup_file_path, 'r') as file:
         # Load the contents of the file
         config = yaml.safe_load(file)
 
@@ -2004,11 +2005,11 @@ def Single_Run(ice_pointer,power_pointer,mass_pointer,dev_mass_pointer):
     return(filename)
 
 
-a = Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+a = Single_Run('40km_Drho5_2D',814.811,'MOOSetupHeavy.yaml',100)
 print('Run 1 Completed')
-b = Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+b = Single_Run('40km_Drho46_2D',814.811,'MOOSetupHeavy.yaml',100)
 print('Run 2 Completed')
-c = Single_Run('40km_Drho5_2D',18.52,'MOOSetup.yaml',42.5)
+c = Single_Run('40km_Drho5_2D',18.52,'MOOSetupHeavy.yaml',100)
 print('Run 3 Completed')
 
 print('All Runs Completed')
