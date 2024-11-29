@@ -5,7 +5,7 @@
 ####DONT Change DIAMETER AND LENGTH (OR MASS) Verified, no constraint on diameter needed
 science_probe_diameter:
   var_symbol: D_sci
-  l_limit: 0.01
+  l_limit: 0.1
   u_limit: 0.5
   unit_str: m
   lim_source: Europa Lander
@@ -54,7 +54,7 @@ relay_probe_Comm_ratio:
 
 relay_probe_diameter:
   var_symbol: D_rel
-  l_limit: 0.05
+  l_limit: 0.1
   u_limit: 0.5
   unit_str: m
   lim_source: Europa Lander
@@ -78,14 +78,14 @@ relay_probe_mass:
 
 sci_antenna_gain:
   var_symbol: G_tx
-  l_limit: 3.15
+  l_limit: 3.16
   u_limit: 3.16
   unit_str: N/A
   lim_source: Bryant
 
 rel_antenna_gain:
   var_symbol: G_tx
-  l_limit: 3.15
+  l_limit: 3.16
   u_limit: 3.16
   unit_str: N/A
   lim_source: Bryant
@@ -113,29 +113,28 @@ comm_bandwidth:
 
 sci_sys_temp:
   var_symbol: a2
-  l_limit: 550
-  u_limit: 650
-  unit_str: Hz
+  l_limit: 590
+  u_limit: 610
+  unit_str: K
   lim_source: 
 
 rel_sys_temp:
   var_symbol: a2
-  l_limit: 550
-  u_limit: 650
-  unit_str: Hz
+  l_limit: 590
+  u_limit: 610
+  unit_str: K
   lim_source: 
 
-###TODO: Make this a real value and add to table
 sci_comm_eff:
   var_symbol: a2
-  l_limit: 0.5
+  l_limit: 0.25
   u_limit: 0.6
   unit_str: Hz
   lim_source: 
 
 rel_comm_eff:
   var_symbol: a2
-  l_limit: 0.5
+  l_limit: 0.25
   u_limit: 0.6
   unit_str: Hz
   lim_source: 
