@@ -29,6 +29,7 @@ from pymoo.core.population import Population
 from multiprocessing.pool import ThreadPool
 from pymoo.core.problem import StarmapParallelization
 
+
 import yaml
 import time
 import json
@@ -118,7 +119,7 @@ def Fileread(filename,depthlimit):
 def Fileread2D(filename):
     
     #Gives directory of file to be opened, then opens it
-    f = open('AWS Files/AWS Files/InputFiles/thermochemical_{}_data.txt'.format(filename),'r')
+    f = open('InputFiles/thermochemical_{}_data.txt'.format(filename),'r')
     #[x:y] tells python to read from the x line to the y line, blank means "to the beginning/end" so here we're reading from line 15 to the end of the document
     lines = f.readlines()[15:]
     #create a bunch of empty lists that we can populate with our data
@@ -539,7 +540,7 @@ def MaxCommsUpward():
     return(x)
 
 
-with open('AWS Files/AWS Files/Configs/EuropaPhysical.json') as EuropaConstantFile:
+with open('Configs/EuropaPhysical.json') as EuropaConstantFile:
     Europa_constants = json.load(EuropaConstantFile)
     rho_w = Europa_constants["rho_w"]["value"]
     g_europa = Europa_constants["g_europa"]["value"]
@@ -2010,11 +2011,11 @@ code_time_0 = time.time()
 
 ####constant definitions
 k_boltz =  1.38e-23
-#Specific_System_Power = 18.52
-Specific_System_Power = 814.811
+Specific_System_Power = 18.52
+#Specific_System_Power = 814.811
 slices =  776
-#deliverable_mass = 42.5
-deliverable_mass = 100
+deliverable_mass = 42.5
+#deliverable_mass = 100
 rho_lead = 11400
 volume_limit = 3.5*3.2
 Melt_Comm_Combined_Power = 0.9
@@ -2023,7 +2024,7 @@ diameter_limit = 3.5
 
 Mission_time_limit_d = 30
 
-input_location = '/home/ec2-user/AWS Files/AWS Files/InputYamls/'
+input_location = '/Users/sjf46/Library/CloudStorage/OneDrive-UniversityofLeicester/ProbeModelling/InputYamls/'
 Mission_filename = 'MissionVariables.yaml'
 filename = '40km_Drho46_2D'
 ice_filename = filename
@@ -2036,7 +2037,7 @@ variable_labels = []
 variable_lower_lims = []
 variable_upper_lims = []
 
-with open('AWS Files/AWS Files/MOOSetupHeavy.yaml', 'r') as file:
+with open('MOOSetup.yaml', 'r') as file:
     # Load the contents of the file
     config = yaml.safe_load(file)
 
@@ -2163,7 +2164,7 @@ constraint_list+= Sys_constraint_list
 
 obj = DepthCalculation()
 
-n_threads = 4
+n_threads = 8
 pool = ThreadPool(n_threads)
 runner = StarmapParallelization(pool.starmap)
 
@@ -2303,8 +2304,8 @@ import scipy.interpolate
 
 #n_pop = 25
 #n_gen = 5
-n_pop = 1
-n_gen = 1
+n_pop = 50
+n_gen = 5
 algorithm = NSGA2(pop_size=n_pop)# Choose an optimization algorithm from pymoo (e.g., NSGA-II, NSGA-III, etc.)
 problem = MyProblem(k_boltz,
     Specific_System_Power,
@@ -2324,14 +2325,14 @@ result = minimize(problem,
                 verbose = True,
                 return_least_infeasible = True,
                 save_history = True)  # Optional seed for reproducibility
-
+print('Threads:', result.exec_time)
 all_pop = Population()
 
 for algorithm in result.history:
     all_pop = Population.merge(all_pop, algorithm.off)
     
 current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-filename = '/home/ec2-user/AWS Files/AWS Files/Moo_Outputs/{}_MOOStats_{}'.format(current_time,ice_filename)
+filename = 'MOO_Outputs/{}_MOOStats_{}'.format(current_time,ice_filename)
 
 
 with open(filename, 'w') as file:
